@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Task"
+             Title="Task">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid ColumnSpacing="2" Padding="5" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Title: " Grid.Row="0" Grid.Column="0"/>
+                <Editor x:Name="Title" FontSize="Medium" TextColor="Black" VerticalOptions="Center" Grid.Row="0" Grid.Column="1"/>
+                <Label Text="Description: " Grid.Row="1" Grid.Column="0"/>
+                <Editor x:Name="Description" FontSize="Medium" TextColor="Black" VerticalOptions="Center" Grid.Row="1" Grid.Column="1"/>
+                <Label Text="Done: " Grid.Row="2" Grid.Column="0"/>
+                <Switch x:Name="Toggle"
+                        Toggled= "switcher_Toggled"
+                        Grid.Row="2" Grid.Column="1"/>
+                <Button x:Name="Delete" Text="Delete Task" Grid.Row="3" Grid.Column="0" Clicked="Delete_Button"/>
+                <Button x:Name="Save" Text="Save Task" Grid.Row="3" Grid.Column="1" Clicked="Update_Button"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
